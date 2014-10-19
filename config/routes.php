@@ -22,6 +22,8 @@ use Cake\Core\Plugin;
 use Cake\Routing\Router;
 
 Router::scope('/', function($routes) {
+	$routes->extensions(['json', 'xml']);
+
 /**
  * Here, we are connecting '/' (base path) to a controller called 'Pages',
  * its action called 'display', and we pass a param to select the view file

@@ -37,6 +37,7 @@ class AppController extends Controller {
  */
 	public function initialize() {
 		$this->loadComponent('Flash');
+		$this->loadComponent('RequestHandler');
 		$this->loadComponent('Crud.Crud', [
 			'actions' => [
 				'Crud.Index',
@@ -47,6 +48,8 @@ class AppController extends Controller {
 			]
 		]);
 		$this->Crud->addListener('relatedModels', 'Crud.RelatedModels');
+		$this->Crud->addListener('Crud.Api');
+		$this->Crud->addListener('Crud.ApiQueryLog');
 	}
 
 }
