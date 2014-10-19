@@ -15,8 +15,6 @@
 		<div class="large-5 columns strings">
 			<h6 class="subheader"><?= __('Username') ?></h6>
 			<p><?= h($user->username) ?></p>
-			<h6 class="subheader"><?= __('Password') ?></h6>
-			<p><?= h($user->password) ?></p>
 		</div>
 		<div class="large-2 large-offset-1 columns numbers end">
 			<h6 class="subheader"><?= __('Id') ?></h6>
