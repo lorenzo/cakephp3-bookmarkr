@@ -167,6 +167,7 @@ Request::addDetector('tablet', function($request) {
 
 Plugin::load('DebugKit', ['bootstrap' => true]);
 Plugin::load('Migrations');
+Plugin::load('Crud');
 
 /**
  * Connect middleware/dispatcher filters.

@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5e687e40258d3b6a47f8e6e5e31699b7",
+    "hash": "ead2d7e5fde92c6ed2354cb1fbb7610e",
     "packages": [
         {
             "name": "aura/installer-default",
@@ -335,6 +335,76 @@
             ],
             "description": "A composer installer for CakePHP 3.0+ plugins.",
             "time": "2014-08-29 19:01:27"
+        },
+        {
+            "name": "friendsofcake/crud",
+            "version": "dev-cake3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfCake/crud.git",
+                "reference": "680880d653bce9199284ed02c99ad5b8c8344cd5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfCake/crud/zipball/680880d653bce9199284ed02c99ad5b8c8344cd5",
+                "reference": "680880d653bce9199284ed02c99ad5b8c8344cd5",
+                "shasum": ""
+            },
+            "require": {
+                "cakephp/cakephp": "3.0.*-dev",
+                "cakephp/plugin-installer": "*"
+            },
+            "require-dev": {
+                "friendsofcake/cakephp-test-utilities": "dev-master",
+                "phpunit/phpunit": "3.7.33"
+            },
+            "type": "cakephp-plugin",
+            "autoload": {
+                "psr-4": {
+                    "Crud\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Winther",
+                    "homepage": "http://cakephp.nu/",
+                    "role": "Author"
+                },
+                {
+                    "name": "José Lorenzo Rodríguez",
+                    "homepage": "https://github.com/lorenzo",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "Andy Dawson",
+                    "homepage": "https://github.com/ad7six",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "ADmad",
+                    "homepage": "https://github.com/admad",
+                    "role": "Contributor"
+                }
+            ],
+            "description": "CakePHP Application development on steroids - rapid prototyping / scaffolding & production ready code - XML / JSON APIs and more",
+            "homepage": "https://github.com/FriendsOfCake/crud",
+            "keywords": [
+                "bake",
+                "cake",
+                "cakephp",
+                "create",
+                "crud",
+                "delete",
+                "retrieve",
+                "scaffold",
+                "scaffolding",
+                "update"
+            ],
+            "time": "2014-10-19 14:39:29"
         },
         {
             "name": "ircmaxell/password-compat",
@@ -859,7 +929,8 @@
     "stability-flags": {
         "cakephp/cakephp": 20,
         "cakephp/debug_kit": 20,
-        "cakephp/migrations": 20
+        "cakephp/migrations": 20,
+        "friendsofcake/crud": 20
     },
     "prefer-stable": true,
     "platform": {
