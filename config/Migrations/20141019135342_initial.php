@@ -6,7 +6,7 @@ class Initial extends AbstractMigration {
 
 	public function change() {
 		$this->table('users')
-			->addColumn('useraname', 'string', ['limit' => 30])
+			->addColumn('username', 'string', ['limit' => 30])
 			->addColumn('password', 'string', ['limit' => 255])
 			->addColumn('created', 'datetime')
 			->addColumn('modified', 'datetime')
