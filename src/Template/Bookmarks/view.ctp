@@ -48,31 +48,6 @@
 </div>
 <div class="related row">
 	<div class="column large-12">
-	<h4 class="subheader"><?= __('Related BookmarksTags') ?></h4>
-	<?php if (!empty($bookmark->bookmarks_tags)): ?>
-	<table cellpadding="0" cellspacing="0">
-		<tr>
-			<th><?= __('Bookmark Id') ?></th>
-			<th><?= __('Tag Id') ?></th>
-			<th class="actions"><?= __('Actions') ?></th>
-		</tr>
-		<?php foreach ($bookmark->bookmarks_tags as $bookmarksTags): ?>
-		<tr>
-			<td><?= h($bookmarksTags->bookmark_id) ?></td>
-			<td><?= h($bookmarksTags->tag_id) ?></td>
-			<td class="actions">
-				<?= $this->Html->link(__('View'), ['controller' => 'BookmarksTags', 'action' => 'view', $bookmarksTags->bookmark_id]) ?>
-				<?= $this->Html->link(__('Edit'), ['controller' => 'BookmarksTags', 'action' => 'edit', $bookmarksTags->bookmark_id]) ?>
-				<?= $this->Form->postLink(__('Delete'), ['controller' => 'BookmarksTags', 'action' => 'delete', $bookmarksTags->bookmark_id], ['confirm' => __('Are you sure you want to delete # %s?', $bookmarksTags->bookmark_id)]) ?>
-			</td>
-		</tr>
-		<?php endforeach; ?>
-	</table>
-	<?php endif; ?>
-	</div>
-</div>
-<div class="related row">
-	<div class="column large-12">
 	<h4 class="subheader"><?= __('Related Tags') ?></h4>
 	<?php if (!empty($bookmark->tags)): ?>
 	<table cellpadding="0" cellspacing="0">

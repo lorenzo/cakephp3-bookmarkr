@@ -30,6 +30,9 @@ class BookmarksTable extends Table {
 			'targetForeignKey' => 'tag_id',
 			'joinTable' => 'bookmarks_tags',
 		]);
+		$this->hasMany('BookmarksTags', [
+			'foreignKey' => 'bookmark_id'
+		]);
 	}
 
 /**
@@ -50,7 +53,8 @@ class BookmarksTable extends Table {
 			->validatePresence('description', 'create')
 			->notEmpty('description')
 			->validatePresence('url', 'create')
-			->notEmpty('url');
+			->notEmpty('url')
+			->add('url', 'valid', ['rule' => 'url']);
 
 		return $validator;
 	}
