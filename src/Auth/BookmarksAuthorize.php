@@ -16,7 +16,7 @@ class BookmarksAuthorize {
 		$action = $request->action;
 
 		// The add and index actions are always allowed.
-		if ($action === 'add' || $action === 'index') {
+		if (in_array($action, ['index', 'add', 'tags'])) {
 			return true;
 		}
 

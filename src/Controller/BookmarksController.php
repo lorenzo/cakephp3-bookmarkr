@@ -21,12 +21,11 @@ class BookmarksController extends AppController {
 			$e->subject->query->contain('Tags');
 		});
 
-		$this->Auth->config('authorize.Bookmarks', ['className' => 'App\Auth\BookmarksAuthorize']);
-	}
+		$this->Crud->on('beforePaginate', function($e) {
+			$this->paginate['conditions'] = ['Bookmarks.user_id' => $this->Auth->user('id')];
+		});
 
-	public function index() {
-		$this->paginate['conditions'] = ['Bookmarks.user_id' => $this->Auth->user('id')];
-		return $this->Crud->execute();
+		$this->Auth->config('authorize.Bookmarks', ['className' => 'App\Auth\BookmarksAuthorize']);
 	}
 
 	public function add() {
@@ -34,6 +33,14 @@ class BookmarksController extends AppController {
 			$e->subject->entity->user_id = $this->Auth->user('id');
 		});
 		return $this->Crud->execute();
+	}
+
+	public function tags($tag) {
+		$this->paginate += [
+			'finder' => 'tagged',
+			'tag' => $tag
+		];
+		return $this->Crud->execute('index');
 	}
 
 }

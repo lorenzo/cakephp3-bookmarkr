@@ -59,6 +59,12 @@ class BookmarksTable extends Table {
 		return $validator;
 	}
 
+	public function findTagged(Query $query, $options) {
+		return $query->matching('Tags', function($q) use ($options) {
+			return $q->where(['Tags.title' => $options['tag']]);
+		});
+	}
+
 	public function beforeSave($event, $entity, $options) {
 		if ($entity->dirty('tag_string')) {
 			$entity->tags = $this->_buildTags($entity->tag_string);
