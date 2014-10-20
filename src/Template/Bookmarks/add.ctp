@@ -15,7 +15,6 @@
 	<fieldset>
 		<legend><?= __('Add Bookmark') ?></legend>
 	<?php
-		echo $this->Form->input('user_id', ['options' => $users]);
 		echo $this->Form->input('title');
 		echo $this->Form->input('description');
 		echo $this->Form->input('url', ['type' => 'url']);
