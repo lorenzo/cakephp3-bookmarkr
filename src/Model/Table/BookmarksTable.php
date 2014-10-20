@@ -59,4 +59,28 @@ class BookmarksTable extends Table {
 		return $validator;
 	}
 
+	public function beforeSave($event, $entity, $options) {
+		if ($entity->dirty('tag_string')) {
+			$entity->tags = $this->_buildTags($entity->tag_string);
+		}
+	}
+
+	protected function _buildTags($tagString) {
+		$new = array_flip(array_map('trim', explode(',', $tagString)));
+		$tags = $this->Tags->find()
+			->where(['Tags.title IN' => array_keys($new)]);
+
+		$out = [];
+		foreach ($tags as $tag) {
+			$out[] = $tag;
+			unset($new[$tag->title]);
+		}
+
+		foreach ($new as $title => $index) {
+			$out[] = $this->Tags->newEntity(['title' => $title]);
+		}
+
+		return $out;
+	}
+
 }

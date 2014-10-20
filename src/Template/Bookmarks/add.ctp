@@ -18,7 +18,7 @@
 		echo $this->Form->input('title');
 		echo $this->Form->input('description');
 		echo $this->Form->input('url', ['type' => 'url']);
-		echo $this->Form->input('tag_string', ['type' => 'text']);
+		echo $this->Form->input('tag_string', ['type' => 'text', 'label' => 'Tags']);
 	?>
 	</fieldset>
 <?= $this->Form->button(__('Submit')) ?>

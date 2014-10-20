@@ -17,10 +17,6 @@ class BookmarksController extends AppController {
 
 	public function initialize() {
 		parent::initialize();
-		$this->Crud
-			->listener('relatedModels')
-			->relatedModels(['Tags'], $this->request->action);
-
 		$this->Crud->on('beforeFind', function($e) {
 			$e->subject->query->contain('Tags');
 		});
