@@ -15,6 +15,7 @@
 namespace App\Controller;
 
 use Cake\Controller\Controller;
+use Crud\Controller\ControllerTrait;
 
 /**
  * Application Controller
@@ -26,7 +27,7 @@ use Cake\Controller\Controller;
  */
 class AppController extends Controller {
 
-	use \Crud\Controller\ControllerTrait;
+	use ControllerTrait;
 
 /**
  * Initialization hook method.
