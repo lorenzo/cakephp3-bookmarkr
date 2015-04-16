@@ -30,7 +30,6 @@ class Initial extends AbstractMigration {
 		$this->table('bookmarks_tags', ['id' => false, 'primary_key' => ['bookmark_id', 'tag_id']])
 			->addColumn('bookmark_id', 'integer')
 			->addColumn('tag_id', 'integer')
-			->addForeignKey('bookmark_id', 'bookmarks', 'id', ['delete' => 'CASCADE', 'update' => 'NO_ACTION'])
 			->addForeignKey('tag_id', 'tags', 'id', ['delete' => 'CASCADE', 'update' => 'NO_ACTION'])
 			->addIndex(['tag_id', 'bookmark_id'])
 			->create();

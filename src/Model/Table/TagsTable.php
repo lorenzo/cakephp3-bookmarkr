@@ -39,7 +39,6 @@ class TagsTable extends Table {
 		$validator
 			->add('id', 'valid', ['rule' => 'numeric'])
 			->allowEmpty('id', 'create')
-			->validatePresence('title', 'create')
 			->notEmpty('title');
 
 		return $validator;

@@ -46,13 +46,9 @@ class BookmarksTable extends Table {
 			->add('id', 'valid', ['rule' => 'numeric'])
 			->allowEmpty('id', 'create')
 			->add('user_id', 'valid', ['rule' => 'numeric'])
-			->validatePresence('user_id', 'create')
 			->notEmpty('user_id')
-			->validatePresence('title', 'create')
 			->notEmpty('title')
-			->validatePresence('description', 'create')
 			->notEmpty('description')
-			->validatePresence('url', 'create')
 			->notEmpty('url')
 			->add('url', 'valid', ['rule' => 'url']);
 
