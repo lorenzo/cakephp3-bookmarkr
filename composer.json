@@ -1,6 +1,6 @@
 {
-    "name": "cakephp/app",
-    "description": "CakePHP skeleton app",
+    "name": "lorenzo/cakephp3-bookmarker",
+    "description": "CakePHP Example App using the Crud plugin",
     "homepage": "http://cakephp.org",
     "type": "project",
     "license": "MIT",
@@ -10,7 +10,7 @@
         "mobiledetect/mobiledetectlib": "2.*",
         "cakephp/migrations": "~1.0",
         "cakephp/plugin-installer": "*",
-        "friendsofcake/crud": "dev-cake3"
+        "friendsofcake/crud": "~4.0"
     },
     "require-dev": {
         "psy/psysh": "@stable",
